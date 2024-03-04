@@ -6,7 +6,7 @@ const userController = {};
 
 userController.register = async (req, res, next) => {
     const { name, email, password } = req.body;
-    const imagePath = "http://localhost:5000/images/" + req.file.filename;
+    const imagePath = "http://dividedculture.com/images/" + req.file.filename;
 
     try {
         // Hash du mot de passe
@@ -24,7 +24,7 @@ userController.register = async (req, res, next) => {
 userController.updateUser = async (req, res, next) => {
     const { userId } = req.params;
     const { name, email, password } = req.body;
-    const imagePath = "http://localhost:5000/images/" + req.file.filename;
+    const imagePath = "http://dividedculture.com/images/" + req.file.filename;
 
     try {
         // Hash du mot de passe si un nouveau mot de passe est fourni

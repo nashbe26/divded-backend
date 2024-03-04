@@ -7,7 +7,7 @@ const NewsController = {};
 NewsController.register = async (req, res, next) => {
     try {
         const { description,title} = req.body;
-        const imagePath ="http://localhost:5000/images/"+ req.file.filename; 
+        const imagePath ="http://dividedculture.com/images/"+ req.file.filename; 
         const { userId } = req.params;
 
         const newNews = new News({ description, user: userId, imagePath, title });

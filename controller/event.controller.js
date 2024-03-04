@@ -8,7 +8,7 @@ eventController.register = async (req, res, next) => {
     try {
         const { date,subject ,location,title,price} = req.body;
         console.log(req.file);
-        const imagePath ="http://localhost:5000/images/"+ req.file.filename; 
+        const imagePath ="http://dividedculture.com/images/"+ req.file.filename; 
         const { userId } = req.params;
 
         const newEvent = new Event({  subject,user:userId, imagePath,date,location,title,price });

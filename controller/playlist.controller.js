@@ -50,7 +50,7 @@ playlistController.getduration = async (playlistId) => {
 playlistController.createPlaylist = async (req, res, next) => {
     try {
         const { title, musicIds,  startTime, genre } = req.body;
-        const imagePath ="http://localhost:5000/images/"+ req.file.filename;
+        const imagePath ="http://dividedculture.com/images/"+ req.file.filename;
         console.log("dddddddddd",musicIds);
         if (!Array.isArray(musicIds)) {
             return res.status(400).json({ message: 'Invalid music data. Music must be an array of IDs.' });

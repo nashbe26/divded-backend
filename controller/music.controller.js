@@ -11,8 +11,8 @@ musicController.register = async (req, res, next) => {
     
     const audioFile = req.files['audioFile'][0].filename; 
     const imageFile = req.files['imageFile'][0].filename; 
-    const audioPath = "http://localhost:5000/music/" + audioFile
-    const cover = "http://localhost:5000/images/" + imageFile
+    const audioPath = "http://dividedculture.com/music/" + audioFile
+    const cover = "http://dividedculture.com/images/" + imageFile
 
     try {
 
@@ -97,7 +97,7 @@ musicController.updateMusic = async (req, res, next) => {
     try {
         const musicId = req.params.id;
         const { filename, originalname, mimetype } = req.body;
-        const audioPath = "http://localhost:5000/music/" + req.file.filename;
+        const audioPath = "http://dividedculture.com/music/" + req.file.filename;
 
         // Check if music exists
         const music = await Music.findById(musicId);
