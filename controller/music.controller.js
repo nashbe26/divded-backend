@@ -1,8 +1,5 @@
 const Music = require('../models/music.model');
-const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
-
-const ffprobe = require('ffprobe');
 const { getAudioDurationInSeconds } = require('get-audio-duration')
 
 const musicController = {};
@@ -18,7 +15,7 @@ musicController.register = async (req, res, next) => {
 
 
 
-        const min = await getAudioDurationInSeconds('public/music/'+audioFile)
+        const min = await getAudioDurationInSeconds('../public/music/'+audioFile)
 
         const durationInMinutes = min / 60;
         const durationInSeconds = min ;
@@ -46,7 +43,7 @@ musicController.getMusicByIdd = async (req, res, next) => {
             return res.status(404).json({ message: 'Music not found' });
         }
 
-        const filePath = 'public/music/' + music.filename; // Replace with your MP3 file path
+        const filePath = '../public/music/' + music.filename; // Replace with your MP3 file path
         const fileStream = fs.createReadStream(filePath);
         
         try {
